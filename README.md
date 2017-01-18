@@ -1,5 +1,5 @@
 # Android-snippets
-A small for favorite android snippets
+A list of android snippets
 
 ## Create GIF like animation
 * Copy images to drawable
@@ -43,4 +43,17 @@ A small for favorite android snippets
      android:layout_width="wrap_content"
      android:layout_height="wrap_content"
      android:contentDescription="Animation" />
-     ```
+```
+
+##Open URL
+```java
+String url = "http://www.stackoverflow.com";
+Intent i = new Intent(Intent.ACTION_VIEW);
+i.setData(Uri.parse(url)); 
+startActivity(i); 
+```
+
+or in short:
+```java
+startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.stackoverflow.com")));
+```
