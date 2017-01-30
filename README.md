@@ -57,3 +57,39 @@ or in short:
 ```java
 startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.stackoverflow.com")));
 ```
+
+##Add menu button
+```java
+ @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+
+        if (id == R.id.action_settings) {
+            Intent intent_in = new Intent(this, SettingsActivity.class);
+                startActivity(intent_in);
+                //overridePendingTransition(0, 0);
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+```
+and add the up button 
+
+```java
+ @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
+        actionBar.setDisplayHomeAsUpEnabled(false);
+        ...
+        ```
